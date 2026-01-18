@@ -6,7 +6,7 @@ metadata:
   labels:
     purpose: deployment-practice
 spec:
-  replicas: 3
+  replicas: {{ .Values.deployment.replicas }}
 # these are the labels replicaset use to create pod replicas, this should match the pod labels
   selector:
     matchLabels:
@@ -23,4 +23,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:stable-perl
+        image: nginx:{{ .Values.deployment.imageVersion }}
