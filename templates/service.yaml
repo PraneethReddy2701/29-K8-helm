@@ -7,6 +7,7 @@ metadata:
     project: roboshop
     environment: dev
 spec:
+  type: LoadBalancer
   selector:
     purpose: deployment-practice
     project: roboshop
@@ -15,4 +16,3 @@ spec:
   - protocol: TCP
     port: 80      # service port
     targetPort: {{ .Values.service.targetPort }}  # container port
-    
